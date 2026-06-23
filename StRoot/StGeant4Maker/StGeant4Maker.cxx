@@ -35,7 +35,6 @@
 
 #include <functional>
 
-#include <TROOT.h>
 //_______________________________________________________________________________________________
 #include <AgMLVolumeIdFactory.h>
 //_______________________________________________________________________________________________
@@ -692,8 +691,7 @@ StGeant4Maker::StGeant4Maker( const char* nm ) :
   mDefaultEngine(0),
   mPostSteppingActions(),
   mGeometry(0),
-  mGeometryG4(0),
-  mIsolatedReader(nullptr)
+  mGeometryG4(0)
 { 
 
 

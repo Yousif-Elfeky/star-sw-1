@@ -34,8 +34,8 @@ void runHFTWrapper(
     TString simMacro = dir + "runEmbeddingSimulationHftG4.C";
     TString embMacro = dir + "bfcMixer_HftG4.C";
 
-    EmbeddingChains<geant4star> getChainOptions;
-    auto opts = getChainOptions(prodname_, false);
+    EmbeddingChains getChainOptions;
+    auto opts = getChainOptions( geant4star, prodname_, false );
     
     if (!opts.isValid) {
         std::cerr << "Production " << prodname_ << " is not valid in EmbeddingChainOptions.h" << std::endl;

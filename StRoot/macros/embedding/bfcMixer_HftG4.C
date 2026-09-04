@@ -7,7 +7,7 @@ class StMessMgr;
 #include "EmbeddingChainOptions.h"
 
 // Functor for the embedding chain options
-EmbeddingChains<geant4star> getChainOptions;
+EmbeddingChains getChainOptions;
 const int debuglevel = 1;
 
 std::string   chain1opts_ = "in,magF,tpcDb,NoDefault,TpxRaw,-ittf,usexgeom,xgeometry stargen:stubs "; // agml??
@@ -271,7 +271,7 @@ void bfcMixer_HftG4(
   prodName = prodName_;
 
   // TODO: impelent a chainoption like fzin for geant4, maybe g4:read?
-  auto opts = getChainOptions( prodName, false ); 
+  auto opts = getChainOptions( geant4star, prodName, false ); 
 
   if ( opts.isValid ) {
     

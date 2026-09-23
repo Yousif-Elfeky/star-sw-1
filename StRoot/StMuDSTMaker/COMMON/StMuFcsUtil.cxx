@@ -299,5 +299,8 @@ void StMuFcsUtil::fillFcsHits(StFcsCollection* fcscol,
     hit->setFitChi2 ( muHit->fitChi2() );
     hit->setNPeak   ( muHit->nPeak()   );
     hit->setEnergy  ( muHit->energy() );
+    for (unsigned int j=0; j<muHit->getGeantTracks().size(); j++){
+        hit->addGeantTrack(muHit->getGeantTracks()[j].first, muHit->getGeantTracks()[j].second);
+    }
   }  // while
 } // fillFcsHits

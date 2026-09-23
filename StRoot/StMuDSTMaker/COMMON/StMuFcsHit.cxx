@@ -13,6 +13,8 @@
 #include "StMuFcsHit.h"
 #include "TString.h"
 
+#include <algorithm>
+
 #include "StMuFcsCluster.h"
 ClassImp(StMuFcsHit)
 
@@ -144,7 +146,7 @@ const StMuFcsCluster* StMuFcsHit::cluster() const {
 }
 void StMuFcsHit::addGeantTrack(unsigned int id, float e){    
     auto cmp = [id](decltype(mGeantTracks)::value_type t){ return t.first == id; };
-    auto trk = find_if(mGeantTracks.rbegin(), mGeantTracks.rend(), cmp);
+    auto trk = std::find_if(mGeantTracks.rbegin(), mGeantTracks.rend(), cmp);
     if(trk == mGeantTracks.rend()){
       mGeantTracks.push_back(std::make_pair(id, e));
     }else{

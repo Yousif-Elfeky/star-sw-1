@@ -142,3 +142,12 @@ StMuFcsCluster* StMuFcsHit::cluster() {
 const StMuFcsCluster* StMuFcsHit::cluster() const {
     return static_cast<StMuFcsCluster*>( mCluster.GetObject() );
 }
+void StMuFcsHit::addGeantTrack(unsigned int id, float e){    
+    auto cmp = [id](decltype(mGeantTracks)::value_type t){ return t.first == id; };
+    auto trk = find_if(mGeantTracks.rbegin(), mGeantTracks.rend(), cmp);
+    if(trk == mGeantTracks.rend()){
+      mGeantTracks.push_back(std::make_pair(id, e));
+    }else{
+      trk->second += e;
+    }
+}

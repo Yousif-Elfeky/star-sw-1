@@ -34,6 +34,7 @@ public:
 
     virtual void Clear (Option_t * opt=""){
         mData.Set(0);
+        mGeantTracks.clear();
     }
     
     unsigned short zs() const;

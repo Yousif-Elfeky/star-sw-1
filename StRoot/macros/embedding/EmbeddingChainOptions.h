@@ -167,7 +167,7 @@ struct EmbeddingChains {
     chain3Opt =  config.prod;
     chain2Opt += config.geom;
     chain1Opt += config.geomMode;
-    chain3Opt += ",TpcMixer,GeantOut,MiniMcMk,McAna,-in,NoInput,useInTracker,emcSim,BEmcMixer,EEfs,EEmcMixer,EEss";
+    chain3Opt += ",TpcMixer,Geant4Out,MiniMcMk,McAna,-in,NoInput,useInTracker,emcSim,BEmcMixer,EEfs,EEmcMixer,EEss";
     
     // Append first
     chain1Opt += chain1Mods[ simEngine ].append;
